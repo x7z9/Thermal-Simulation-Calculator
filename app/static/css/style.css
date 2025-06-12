@@ -1,0 +1,253 @@
+body {
+    font-family: sans-serif;
+    margin: 20px;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+h1 {
+    color: #333;
+}
+
+h2 {
+    margin-top: 30px;
+    color: #555;
+}
+
+form div {
+    margin-bottom: 10px;
+}
+
+label {
+    display: inline-block;
+    width: 250px; /* Adjust as needed */
+    margin-right: 10px;
+}
+
+input[type="number"] {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 150px; /* Adjust as needed */
+}
+
+button[type="submit"] {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+#errorMessages {
+    color: red;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+div[style*="width: 80%"] { /* Targeting the chart container */
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Styles for Composite Wall Calculator */
+#layers-container {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px dashed #ddd;
+    background-color: #f9f9f9;
+}
+
+#layers-container > div { /* Each layer group */
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-bottom: 10px;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+#layers-container h4 {
+    margin-top: 0;
+    color: #333;
+}
+
+#layers-container .removeLayerBtn {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 0.9em;
+    margin-top: 10px;
+}
+
+#layers-container .removeLayerBtn:hover {
+    background-color: #c82333;
+}
+
+#addLayerBtn {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+#addLayerBtn:hover {
+    background-color: #218838;
+}
+
+hr {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 0;
+    border-top: 1px solid #eee;
+}
+
+#results-section strong {
+    color: #333;
+}
+
+/* Styles for Heat Exchanger Calculator */
+fieldset {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+}
+
+legend {
+    font-weight: bold;
+    color: #333;
+    padding: 0 5px;
+}
+
+#heatExchangerForm label {
+    width: 350px; /* Adjust if necessary for longer labels */
+}
+
+/* General Body Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #e9ecef; /* Light grey background for the page */
+    color: #212529; /* Dark grey text */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header Styles */
+header {
+    background-color: #007bff; /* Primary blue */
+    color: white;
+    padding: 1rem 0;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+/* Navigation Styles */
+nav {
+    background-color: #343a40; /* Dark grey for nav bar */
+    padding: 0.5rem 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline-block;
+}
+
+nav ul li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    border-radius: 4px; /* Rounded corners for links */
+    margin: 0 5px; /* Spacing between links */
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    color: white;
+}
+
+nav ul li a.active { /* Style for active tab - requires JS or Flask to set class */
+    background-color: #0056b3;
+    font-weight: bold;
+}
+
+
+/* Main Content Area Styles */
+main {
+    flex: 1; /* Allows main to grow and push footer down */
+    padding: 20px;
+    background-color: #fff; /* White background for content */
+    margin: 20px auto; /* Centering content with auto margins */
+    width: 90%; /* Max width of content area */
+    max-width: 1200px; /* Cap the max width */
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    border-radius: 8px;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #343a40; /* Dark grey for footer */
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: auto; /* Pushes footer to bottom if content is short */
+    font-size: 0.9rem;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Consistent h2 style for pages */
+main h2 {
+    color: #007bff; /* Blue for page titles */
+    border-bottom: 2px solid #dee2e6; /* Light grey border */
+    padding-bottom: 0.5rem;
+    margin-top: 0; /* Remove default margin if extending base */
+}
+
+/* Ensure form elements inherit font */
+button, input, select, textarea {
+    font-family: inherit;
+}
+
+/* More specific label styling if needed */
+label {
+    display: inline-block; /* Already have this from before, ensure consistency */
+    /* width: 250px; -> This was in specific forms, maybe generalize or keep specific */
+    margin-bottom: .5rem; /* Add some space below labels */
+}
