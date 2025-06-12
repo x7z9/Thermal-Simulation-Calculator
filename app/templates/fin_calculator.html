@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block title %}Fin Calculator - ThermalSim Suite{% endblock %}
+
+{% block content %}
+    <h2>Extended Surface (Fin) Calculator</h2>
+    <form id="finForm">
+        <div>
+            <label for="P">Fin Perimeter (P) [m]:</label>
+            <input type="number" id="P" name="P" step="any" required>
+        </div>
+        <div>
+            <label for="Ac">Fin Cross-sectional Area (Ac) [m^2]:</label>
+            <input type="number" id="Ac" name="Ac" step="any" required>
+        </div>
+        <div>
+            <label for="L">Fin Length (L) [m]:</label>
+            <input type="number" id="L" name="L" step="any" required>
+        </div>
+        <div>
+            <label for="k">Thermal Conductivity (k) [W/mK]:</label>
+            <input type="number" id="k" name="k" step="any" required>
+        </div>
+        <div>
+            <label for="h_conv">Convection Coefficient (h_conv) [W/m^2K]:</label>
+            <input type="number" id="h_conv" name="h_conv" step="any" required>
+        </div>
+        <div>
+            <label for="T_base">Base Temperature (T_base) [K]:</label>
+            <input type="number" id="T_base" name="T_base" step="any" required>
+        </div>
+        <div>
+            <label for="T_inf">Ambient Temperature (T_inf) [K]:</label>
+            <input type="number" id="T_inf" name="T_inf" step="any" required>
+        </div>
+        <button type="submit">Calculate</button>
+    </form>
+
+    <h2>Results</h2>
+    <div>
+        <strong>Heat Transfer Rate (q_f):</strong> <span id="heatTransferRate">---</span> W
+    </div>
+    <div>
+        <strong>Fin Efficiency (η_f):</strong> <span id="finEfficiency">---</span>
+    </div>
+
+    <div style="width: 80%; margin-top: 20px;">
+        <canvas id="tempDistChart"></canvas>
+    </div>
+
+    <div id="resultsActions" style="margin-top: 20px; text-align: center;">
+        <button type="button" id="exportPdfBtn" style="display: none;">Export Results to PDF</button>
+    </div>
+
+    <div id="errorMessages" style="color: red; margin-top: 10px;"></div>
+
+    <script src="{{ url_for('static', filename='js/fin_calculator.js') }}"></script>
+{% endblock %}

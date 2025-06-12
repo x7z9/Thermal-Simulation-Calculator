@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}Home - ThermalSim Suite{% endblock %}
+
+{% block content %}
+    <h2>Welcome to ThermalSim Suite!</h2>
+    <p>
+        This application provides a collection of calculators for common thermal engineering problems.
+        Navigate through the tabs above to access the different simulation tools.
+    </p>
+    <p>Current tools available:</p>
+    <ul>
+        <li>
+            <strong><a href="{{ url_for('fin_calculator_page') }}">Extended Surface (Fin) Calculator:</a></strong>
+            Analyze the performance of rectangular fins, including temperature distribution, heat transfer rate, and efficiency.
+        </li>
+        <li>
+            <strong><a href="{{ url_for('composite_wall_calculator_page') }}">Composite Wall Heat Conduction Calculator:</a></strong>
+            Calculate heat flux and thermal resistances for multi-layered composite walls.
+        </li>
+        <li>
+            <strong><a href="{{ url_for('heat_exchanger_calculator_page') }}">Parallel/Counter-Flow Heat Exchanger Calculator:</a></strong>
+            Determine the performance of heat exchangers using the NTU-effectiveness method, including outlet temperatures and actual heat transfer.
+        </li>
+    </ul>
+    <p>
+        Select a calculator from the navigation bar to begin.
+    </p>
+{% endblock %}

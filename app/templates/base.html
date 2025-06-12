@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}ThermalSim Suite{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <h1>ThermalSim Suite</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('index') }}">Home</a></li>
+            <li><a href="{{ url_for('fin_calculator_page') }}">Fin Calculator</a></li>
+            <li><a href="{{ url_for('composite_wall_calculator_page') }}">Composite Wall Calculator</a></li>
+            <li><a href="{{ url_for('heat_exchanger_calculator_page') }}">Heat Exchanger Calculator</a></li>
+        </ul>
+    </nav>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    <footer>
+        <p>&copy; 2023 ThermalSim Suite. All rights reserved.</p>
+    </footer>
+</body>
+</html>

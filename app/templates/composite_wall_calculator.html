@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{% block title %}Composite Wall Calculator - ThermalSim Suite{% endblock %}
+
+{% block content %}
+    <h2>Composite Wall Heat Conduction Calculator</h2>
+
+    <form id="compositeWallForm">
+        <div>
+            <label for="T_inner">Inner Surface Temperature (T_inner) [K]:</label>
+            <input type="number" id="T_inner" name="T_inner" step="any" required>
+        </div>
+        <div>
+            <label for="T_outer">Outer Surface Temperature (T_outer) [K]:</label>
+            <input type="number" id="T_outer" name="T_outer" step="any" required>
+        </div>
+
+        <h2>Layers</h2>
+        <div id="layers-container">
+            <!-- Layer inputs will be added here by JavaScript -->
+        </div>
+        <button type="button" id="addLayerBtn">Add Layer</button>
+
+        <hr>
+        <button type="submit">Calculate Wall Performance</button>
+    </form>
+
+    <div id="results-section" style="margin-top: 20px;">
+        <h2>Results</h2>
+        <div>
+            <strong>Total Thermal Resistance (R_total):</strong> <span id="totalResistance">---</span> K/W
+        </div>
+        <div>
+            <strong>Heat Flux (q_flux):</strong> <span id="heatFlux">---</span> W/m^2
+            <small>(Note: This is heat rate per unit area. Total heat rate Q = q_flux * Area)</small>
+        </div>
+    </div>
+
+    <div id="resultsActionsComposite" style="margin-top: 20px; text-align: center;">
+        <button type="button" id="exportPdfBtnComposite" style="display: none;">Export Results to PDF</button>
+    </div>
+
+    <div id="errorMessages" style="color: red; margin-top: 10px; font-weight: bold;"></div>
+
+    <!-- Template for a single layer -->
+    <div id="layerTemplate" style="display: none; border: 1px solid #ccc; padding: 10px; margin-bottom: 10px;">
+        <h4>Layer <span class="layer-number"></span></h4>
+        <div>
+            <label>Thickness (m):</label>
+            <input type="number" class="layer-thickness" step="any" required>
+        </div>
+        <div>
+            <label>Thermal Conductivity (k) [W/mK]:</label>
+            <input type="number" class="layer-k_value" step="any" required>
+        </div>
+        <div>
+            <label>Area (m^2):</label>
+            <input type="number" class="layer-area" step="any" required>
+        </div>
+        <button type="button" class="removeLayerBtn">Remove Layer</button>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/composite_wall_calculator.js') }}"></script>
+{% endblock %}
